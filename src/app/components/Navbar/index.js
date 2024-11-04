@@ -1,10 +1,9 @@
 "use client"
 import styles from './Navbar.module.css';
-import Image from "next/image";
 import classNames from "classnames";
 import {useState} from "react";
 import {GiHamburgerMenu} from "react-icons/gi";
-import {Box, Drawer, IconButton, Input, List, ListItem, ListItemButton, ModalClose, Typography} from "@mui/joy";
+import {Box, Drawer, IconButton, Input, List, ListItemButton, ModalClose, Typography} from "@mui/joy";
 import ThemeToggle from "@/app/components/ThemeToggle";
 import Icon from "@/app/components/Icon";
 import {Search} from "react-bootstrap-icons";

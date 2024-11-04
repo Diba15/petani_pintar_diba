@@ -1,6 +1,5 @@
 import {Typography} from "@mui/joy";
 import MainButton from "@/app/components/MainButton";
-import Carousel from "@/app/components/Carousel";
 import Image from "next/image";
 
 const Hero = () => {

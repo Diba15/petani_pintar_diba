@@ -1,6 +1,5 @@
 "use client";
 import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
 import AutoScroll from "embla-carousel-auto-scroll";
 import Image from "next/image";
 
