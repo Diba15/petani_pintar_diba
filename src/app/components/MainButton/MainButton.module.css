@@ -1,0 +1,9 @@
+.MainButton {
+    background: linear-gradient(to right, rgb(22 163 74) 50%, transparent 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .5s ease-out;
+}
+.MainButton:hover {
+    background-position: left bottom;
+}
