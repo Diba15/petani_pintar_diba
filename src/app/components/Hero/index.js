@@ -1,6 +1,7 @@
 import {Typography} from "@mui/joy";
 import MainButton from "@/app/components/MainButton";
 import Image from "next/image";
+import farmer_image from "../../images/farmer_image.jpg";
 
 const Hero = () => {
     return (
@@ -15,7 +16,7 @@ const Hero = () => {
                 <MainButton>Kontak Kami!</MainButton>
             </div>
             <div className="w-100 h-100 relative">
-                <Image fill src="https://plchldr.co/i/970x250" alt="plchldr.co"/>
+                <Image fill src={farmer_image} alt="farmer"/>
             </div>
         </div>
     )
