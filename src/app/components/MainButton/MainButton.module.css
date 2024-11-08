@@ -3,6 +3,7 @@
     background-size: 200% 100%;
     background-position: right bottom;
     transition: all .5s ease-out;
+    max-width: 26vh;
 }
 .MainButton:hover {
     background-position: left bottom;
