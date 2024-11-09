@@ -17,7 +17,8 @@ module.exports = {
                 foreground: "var(--foreground)",
                 "dark": '#232A3C',
                 "darkBackground": '#242124',
-                "medium": '#293245'
+                "medium": '#293245',
+                'harga': '#5B8C51'
             },
         },
     },

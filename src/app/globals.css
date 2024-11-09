@@ -13,11 +13,20 @@
   --foreground: #EDF7F6;
 }
 
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, 'Playfair Display', sans-serif;
-  min-height: 100vh;
+  min-height: fit-content;
   overflow-x: hidden;
 }
 
