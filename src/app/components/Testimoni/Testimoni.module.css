@@ -1,0 +1,20 @@
+.testimoni {
+    min-width: 40vw;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(50%)
+    }
+}
+
+.animateScroll {
+    animation: scroll 20s linear infinite;
+}
+
+.animateScroll:hover {
+    animation-play-state: paused;
+}

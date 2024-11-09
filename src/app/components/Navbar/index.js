@@ -90,15 +90,15 @@ const Navbar = () => {
                     </Drawer>
                 </div>
                 <Icon/>
-            </div>
-            <div className="hidden md:flex md:items-center">
-                <ul className="flex gap-10 items-center flex-1 justify-end text-gray-900 dark:text-white font-bold">
-                    <li className="font-bold text-green-600 cursor-pointer">Beranda</li>
-                    <li className="hover:text-green-600 transition duration-300 ease-in-out cursor-pointer">Harga</li>
-                    <li className="hover:text-green-600 transition duration-300 ease-in-out cursor-pointer">Kontak</li>
-                    <li className="hover:text-green-600 transition duration-300 ease-in-out cursor-pointer">Blog</li>
-                    <li className="hover:text-green-600 transition duration-300 ease-in-out cursor-pointer">Layanan</li>
-                </ul>
+                <div className="hidden md:flex md:items-center">
+                    <ul className="flex gap-10 items-center flex-1 justify-end text-gray-900 dark:text-white font-bold">
+                        <li className="font-bold text-green-600 cursor-pointer">Beranda</li>
+                        <li className="hover:text-green-600 transition duration-300 ease-in-out cursor-pointer">Harga</li>
+                        <li className="hover:text-green-600 transition duration-300 ease-in-out cursor-pointer">Kontak</li>
+                        <li className="hover:text-green-600 transition duration-300 ease-in-out cursor-pointer">Blog</li>
+                        <li className="hover:text-green-600 transition duration-300 ease-in-out cursor-pointer">Layanan</li>
+                    </ul>
+                </div>
             </div>
             <div>
                 <ThemeToggle/>
