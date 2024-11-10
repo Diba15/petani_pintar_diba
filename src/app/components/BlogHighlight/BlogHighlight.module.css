@@ -1,0 +1,14 @@
+.card {
+    background-image: url("../../images/MainBlog.png");
+    background-size: cover;
+    background-position: center;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}

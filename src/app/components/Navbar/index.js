@@ -14,7 +14,7 @@ const Navbar = () => {
     return (
         <nav className={classNames(styles.nav, "bg-transparent", "justify-between", "dark:bg-medium")}>
             <div className="flex flex-row items-center gap-5">
-                <IconButton variant="outlined" className="md:hidden text-black dark:text-white"
+                <IconButton variant="outlined" className="text-black lg:hidden dark:text-white"
                             onClick={() => setOpen(true)}>
                     <GiHamburgerMenu/>
                 </IconButton>
@@ -90,7 +90,7 @@ const Navbar = () => {
                     </Drawer>
                 </div>
                 <Icon/>
-                <div className="hidden md:flex md:items-center">
+                <div className="hidden lg:flex lg:items-center">
                     <ul className="flex gap-10 items-center flex-1 justify-end text-gray-900 dark:text-white font-bold">
                         <li className="font-bold text-green-600 cursor-pointer">Beranda</li>
                         <li className="hover:text-green-600 transition duration-300 ease-in-out cursor-pointer">Harga</li>

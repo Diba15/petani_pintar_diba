@@ -44,7 +44,7 @@ const SwitchHarga = () => {
                 </div>
             </div>
 
-            <div className={"flex justify-center mx-auto gap-10"}>
+            <div className={"flex flex-col justify-center mx-auto gap-10 items-center lg:flex-row"}>
                 {
                     isActive === "Mingguan" && (
                         servicePrice.map((item, index) => (
