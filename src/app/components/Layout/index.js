@@ -1,3 +1,4 @@
+import {SpeedInsights} from "@vercel/speed-insights/next";
 import CustomNavbar from "@/app/components/CustomNavbar";
 import {NextUIProvider} from "@nextui-org/react";
 import classNames from "classnames";
@@ -10,6 +11,7 @@ const Layout = ({children}) => {
             <CustomNavbar/>
             <div className={classNames(styles.container, "py-0", "px-0", "m-9", "dark:bg-medium", "min-h-fit")}>
                 {children}
+                <SpeedInsights />
             </div>
         </NextUIProvider>
     )
