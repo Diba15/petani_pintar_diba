@@ -4,7 +4,7 @@ import { BsCheckCircleFill } from "react-icons/bs";
 
 const CardHarga = ({namePack, price, priceType, duration, serviceList}) => {
     return (
-        <div className={"bg-white max-w-[50vw] rounded-xl p-5 shadow lg:max-w-96"}>
+        <div className={"bg-white max-w-sm rounded-xl p-5 shadow lg:max-w-96"}>
             <div className={"flex flex-col text-center justify-center"}>
                 <h6 className={"font-bold text-2xl"}>{namePack}</h6>
                 <div className={"flex flex-row text-harga text-center justify-center align-text-bottom"}>
