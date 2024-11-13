@@ -4,8 +4,21 @@ import classNames from "classnames";
 import {useState} from "react";
 import ThemeToggle from "@/app/components/ThemeToggle";
 import Icon from "@/app/components/Icon";
-import {Navbar, NavbarContent, NavbarItem, NavbarMenu, NavbarMenuItem, NavbarMenuToggle} from "@nextui-org/react";
+import {
+    Button,
+    Dropdown, DropdownItem, DropdownMenu, DropdownTrigger,
+    Navbar,
+    NavbarContent,
+    NavbarItem,
+    NavbarMenu,
+    NavbarMenuItem,
+    NavbarMenuToggle
+} from "@nextui-org/react";
 import Link from "next/link";
+import {RiCustomerService2Line} from "react-icons/ri";
+import {IoSettingsOutline} from "react-icons/io5";
+import {IoChevronDownOutline} from "react-icons/io5";
+
 
 const CustomNavbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -46,7 +59,7 @@ const CustomNavbar = () => {
                     className="sm:hidden"
                 />
                 {
-                    isMenuOpen ?  <ThemeToggle/> : <Icon/>
+                    isMenuOpen ? <ThemeToggle/> : <Icon/>
                 }
 
                 <NavbarContent className="hidden text-black sm:flex gap-4" justify="start">
@@ -70,21 +83,42 @@ const CustomNavbar = () => {
                             Blog
                         </Link>
                     </NavbarItem>
-                    <NavbarItem className={"text-blue-600 font-bold"}>
-                        <Link href="#">
-                            Kontak
-                        </Link>
-                    </NavbarItem>
                 </NavbarContent>
 
             </NavbarContent>
 
             <NavbarContent className={"hidden md:flex"} justify="end">
-                <NavbarItem>
-                    <div>
-                        <ThemeToggle/>
-                    </div>
-                </NavbarItem>
+                <Dropdown className={"bg-[#EDF7F6] dark:bg-medium"}>
+                    <NavbarItem>
+                        <DropdownTrigger>
+                            <Button
+                                className={"bg-transparent p-0 data-[hover=true]:bg-transparent flex items-center justify-center font-bold dark:text-white"}
+                                disableRipple
+                                endContent={<IoChevronDownOutline className={"self-center font-bold text-xl"}/>}
+                                radius={"sm"}
+                            >
+                                Bantuan
+                            </Button>
+                        </DropdownTrigger>
+                    </NavbarItem>
+                    <DropdownMenu
+                        className={"w-[340px] bg-[#EDF7F6] rounded-xl dark:text-white dark:bg-medium"}
+                        itemClasses={{
+                            base: "gap-4"
+                        }}
+                    >
+                        <DropdownItem key={"Kontak"}
+                                      description={"Jika ada yang ingin ditanyakan ataupun berkonsultasi silahkan hubungi kami."}
+                                      startContent={<RiCustomerService2Line className={"text-2xl"}/>}>
+                            Kontak
+                        </DropdownItem>
+                        <DropdownItem key={"DarkMode"}
+                                      description={"Ubah tampilan website menjadi gelap menyesuaikan dengan mata anda."}
+                                      startContent={<ThemeToggle/>}>
+                            Dark Mode
+                        </DropdownItem>
+                    </DropdownMenu>
+                </Dropdown>
             </NavbarContent>
             <NavbarMenu>
                 {menuItems.map((item, index) => (
