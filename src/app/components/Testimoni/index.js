@@ -26,7 +26,7 @@ const TestimoniCard = ({img, comment, name, position}) => {
     //     </div>
     // )
     return (
-        <Card className="max-w-xl bg-white rounded-lg shadow-md mb-3">
+        <Card className="max-w-sm bg-white rounded-lg shadow-md mb-3 md:max-w-xl">
             <div className="p-6">
 
                 {/*{Desktop}*/}
