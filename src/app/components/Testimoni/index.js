@@ -1,24 +1,96 @@
+"use client"
 import styles from "./Testimoni.module.css";
 import classNames from "classnames";
-import {User} from "@nextui-org/react";
+import {Card} from "@nextui-org/react";
+import {useState} from "react";
+import {ChevronDown, ChevronUp} from "react-bootstrap-icons";
 
 const TestimoniCard = ({img, comment, name, position}) => {
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    // return (
+    //     <div
+    //         className={classNames(styles.testimoni, "min-h-72 py-5 px-11 bg-white rounded-xl shadow flex flex-col mb-10 justify-around")}>
+    //         <div>
+    //             <h6 className={classNames("max-h-72 text-justify")}>&quot;{comment}&rdquo;</h6>
+    //         </div>
+    //         <div className={classNames("flex flex-row gap-3")}>
+    //             <User
+    //                 name={name}
+    //                 description={position}
+    //                 avatarProps={{
+    //                     src: img
+    //                 }}
+    //             />
+    //         </div>
+    //     </div>
+    // )
     return (
-        <div
-            className={classNames(styles.testimoni, "min-h-72 py-5 px-11 bg-white rounded-xl shadow flex flex-col mb-10 justify-around")}>
-            <div>
-                <h6 className={classNames("text-justify")}>&quot;{comment}&rdquo;</h6>
+        <Card className="max-w-xl bg-white rounded-lg shadow-md mb-3">
+            <div className="p-6">
+
+                {/*{Desktop}*/}
+                <div className="hidden md:flex md:flex-col md:h-[220px]">
+                    <div className="flex-grow">
+                        <p className="text-sm text-gray-600 text-justify">
+                            &#34;{comment}&#34;
+                        </p>
+                    </div>
+
+                    <div className="flex items-center space-x-3 pt-4">
+                        <div className="w-10 h-10 rounded-full bg-gray-200 overflow-hidden">
+                            <img
+                                src={img}
+                                alt={name}
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
+                        <div>
+                            <h4 className="font-medium text-sm text-start">{name}</h4>
+                            <p className="text-xs text-gray-500 text-start">{position}</p>
+                        </div>
+                    </div>
+                </div>
+
+                {/*{Mobile}*/}
+                <div className="md:hidden">
+                    <div className={`space-y-4 ${isExpanded ? '' : 'max-h-24 overflow-hidden'}`}>
+                        <p className="text-sm text-gray-600 text-justify">
+                            &#34;{comment}&#34;
+                        </p>
+                    </div>
+
+                    <button
+                        className="w-full text-center mt-2 text-blue-500 flex items-center justify-center gap-1"
+                        onClick={() => setIsExpanded(!isExpanded)}
+                    >
+                        {isExpanded ? (
+                            <>
+                                Lihat lebih sedikit <ChevronUp size={16}/>
+                            </>
+                        ) : (
+                            <>
+                                Lihat selengkapnya <ChevronDown size={16}/>
+                            </>
+                        )}
+                    </button>
+
+                    <div className="flex items-start space-x-3 mt-4 pt-4 ">
+                        <div className="w-10 h-10 rounded-full bg-gray-200 overflow-hidden">
+                            <img
+                                src={img}
+                                alt={name}
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
+                        <div>
+                            <h4 className="font-medium text-sm text-start">{name}</h4>
+                            <p className="text-xs text-gray-500 text-start">{position}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div className={classNames("flex flex-row gap-3")}>
-                <User
-                    name={name}
-                    description={position}
-                    avatarProps={{
-                        src: img
-                    }}
-                />
-            </div>
-        </div>
+        </Card>
     )
 }
 
@@ -66,19 +138,14 @@ const Testimoni = () => {
 
     return (
         <div className={"w-full overflow-hidden"}>
-            <div className={"relative"}>
-                <div className={classNames(styles.animateScroll, "flex justify-center gap-10 my-7")}>
-                    {
-                        testimonis.map((testimoni, index) => (
-                            <TestimoniCard key={`testimoni-1-${index}`} {...testimoni}/>
-                        ))
-                    }
-                    {
-                        testimonis.map((testimoni, index) => (
-                            <TestimoniCard key={`testimoni-2-${index}`} {...testimoni}/>
-                        ))
-                    }
-                </div>
+            <div className={classNames("flex snap-x snap-mandatory overflow-x-auto gap-4 my-7 mx-7")}>
+                {
+                    testimonis.map((testimoni, index) => (
+                        <div key={`testimoni-1-${index}`} className={"snap-center shrink-0"}>
+                            <TestimoniCard {...testimoni}/>
+                        </div>
+                    ))
+                }
             </div>
         </div>
     )

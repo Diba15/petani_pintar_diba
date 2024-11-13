@@ -10,8 +10,6 @@ import BlogHighlight from "@/app/components/BlogHighlight";
 import BlogCard from "@/app/components/BlogCard";
 import {Divider} from "@nextui-org/react";
 
-
-
 export default function Home() {
 
     return (
@@ -24,17 +22,17 @@ export default function Home() {
                 <CardService/>
             </div>
 
-            <div id={"Testimoni"} className={classNames("text-center my-8 justify-center")}>
+            <div id={"Testimoni"} className={classNames("text-center mb-8 justify-center")}>
                 <h2 className={classNames(styles.fontSection, "font-bold text-5xl font-playfair dark:text-white")}>Testimoni</h2>
                 <Testimoni/>
             </div>
 
-            <div id={"Harga"} className={classNames("text-center my-8")}>
+            <div id={"Harga"} className={classNames("text-center mb-8")}>
                 <h2 className={classNames(styles.fontSection, "font-bold text-5xl font-playfair dark:text-white")}>Harga</h2>
                 <SwitchHarga/>
             </div>
 
-            <div id={"Blog"} className={classNames("text-center my-8")}>
+            <div id={"Blog"} className={classNames("text-center mb-8")}>
                 <h2 className={classNames(styles.fontSection, "font-bold text-5xl font-playfair dark:text-white")}>Blog</h2>
                 <div className={"my-10 flex justify-center mx-auto"}>
                     <BlogHighlight />

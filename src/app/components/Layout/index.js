@@ -10,7 +10,7 @@ const Layout = ({children}) => {
     return (
         <NextUIProvider>
             <CustomNavbar/>
-            <div className={classNames(styles.container, "py-0", "px-0", "m-9", "dark:bg-medium", "min-h-fit")}>
+            <div className={classNames(styles.container, "py-0", "px-0", "m-9", "dark:bg-medium", "min-h-fit", "scroll-smooth")}>
                 {children}
                 <SpeedInsights />
                 <Analytics />
