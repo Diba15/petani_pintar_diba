@@ -70,7 +70,7 @@ const CustomNavbar = () => {
                             Blog
                         </Link>
                     </NavbarItem>
-                    <NavbarItem className={"text-blue-400 hover:text-blue-600 font-bold"}>
+                    <NavbarItem className={"text-blue-600 font-bold"}>
                         <Link href="#">
                             Kontak
                         </Link>
@@ -88,7 +88,7 @@ const CustomNavbar = () => {
             </NavbarContent>
             <NavbarMenu>
                 {menuItems.map((item, index) => (
-                    <NavbarMenuItem key={`${item.name}-${index}`} className={"text-black"}>
+                    <NavbarMenuItem key={`${item.name}-${index}`} className={"text-slate-950 font-bold"}>
                         <Link
                             color={
                                 index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
