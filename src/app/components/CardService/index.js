@@ -10,7 +10,7 @@ import Image from "next/image";
 
 const Card = ({img, number, title, desc}) => {
     return (
-        <div style={{backgroundImage: `url(${img})`}} className={classNames("max-w-[50vw] text-white relative min-h-96 rounded-xl overflow-hidden lg:max-w-[40vh]")}>
+        <div style={{backgroundImage: `url(${img})`}} className={classNames("max-w-sm text-white relative min-h-96 rounded-xl overflow-hidden md:max-w-[40vh]")}>
             <Image src={img} alt={title} fill className={"object-cover"} priority/>
             <div className={classNames(styles.cardSection, "p-5 min-h-96 rounded-xl relative z-10")}>
                 <h1 className={"text-start font-bold text-4xl"}>{number}</h1>
@@ -54,7 +54,7 @@ const CardService = () => {
 
 
     return (
-        <div className={"flex flex-col justify-center gap-10 my-7 mx-auto items-center lg:flex-row"}>
+        <div className={"flex flex-col justify-center gap-10 mx-7 my-7 items-center md:mx-auto md:flex-row"}>
             {
                 services.map((service, index) => {
                     return (
