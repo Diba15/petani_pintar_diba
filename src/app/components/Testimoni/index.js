@@ -26,13 +26,13 @@ const TestimoniCard = ({img, comment, name, position}) => {
     //     </div>
     // )
     return (
-        <Card className="max-w-sm bg-white rounded-lg shadow-md mb-3 md:max-w-xl">
+        <Card className="max-w-sm bg-white rounded-lg shadow-md mb-3 md:max-w-xl dark:bg-dark dark:text-white">
             <div className="p-6">
 
                 {/*{Desktop}*/}
                 <div className="hidden md:flex md:flex-col md:h-[220px]">
                     <div className="flex-grow">
-                        <p className="text-sm text-gray-600 text-justify">
+                        <p className="text-sm text-gray-600 text-justify dark:text-white">
                             &#34;{comment}&#34;
                         </p>
                     </div>
@@ -55,7 +55,7 @@ const TestimoniCard = ({img, comment, name, position}) => {
                 {/*{Mobile}*/}
                 <div className="md:hidden">
                     <div className={`space-y-4 ${isExpanded ? '' : 'max-h-24 overflow-hidden'}`}>
-                        <p className="text-sm text-gray-600 text-justify">
+                        <p className="text-sm text-gray-600 text-justify dark:text-white">
                             &#34;{comment}&#34;
                         </p>
                     </div>

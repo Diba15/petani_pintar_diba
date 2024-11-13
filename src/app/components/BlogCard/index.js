@@ -5,7 +5,7 @@ import blog4 from "../../images/blog4.png";
 import Image from "next/image";
 import {Divider} from "@nextui-org/react";
 
-const Card = ({img, title, desc}) => {
+const Card = ({img, title}) => {
     return (
         <div className="max-w-sm mx-auto rounded-xl mb-5 overflow-hidden items-center justify-center md:max-w-xl md:mx-10">
             <div className="md:flex">
@@ -14,7 +14,7 @@ const Card = ({img, title, desc}) => {
                 </div>
                 <div className="p-8">
                     <a href=""
-                       className="block text-start mt-1 text-lg leading-tight font-medium text-black hover:underline">{title}</a>
+                       className="block text-start mt-1 text-lg leading-tight font-medium text-black hover:underline dark:text-white">{title}</a>
                 </div>
             </div>
         </div>
@@ -27,22 +27,18 @@ const BlogCard = () => {
         {
             img: blog1,
             title: "Penggunaan Alat Pertanian Petani Pintar Membantu",
-            desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi consequatur doloremque dolores harum incidunt laborum neque repellendus, sapiente sunt unde? Adipisci assumenda doloribus est exercitationem magni molestias soluta sunt vitae."
         },
         {
           img: blog2,
           title: "Sangat Membantu dalam Pengembangan Usaha Pertanian",
-          desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi consequatur doloremque dolores harum incidunt laborum neque repellendus, sapiente sunt unde? Adipisci assumenda doloribus est exercitationem magni molestias soluta sunt vitae."
         },
         {
             img: blog3,
             title: "Hasil Pertanian Menjadi Lebih Segar",
-            desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi consequatur doloremque dolores harum incidunt laborum neque repellendus, sapiente sunt unde? Adipisci assumenda doloribus est exercitationem magni molestias soluta sunt vitae."
         },
         {
             img: blog4,
             title: "Petani Pintar Mendapatkan Penghargaan",
-            desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi consequatur doloremque dolores harum incidunt laborum neque repellendus, sapiente sunt unde? Adipisci assumenda doloribus est exercitationem magni molestias soluta sunt vitae."
         }
     ]
 

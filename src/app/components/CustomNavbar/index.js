@@ -45,7 +45,9 @@ const CustomNavbar = () => {
                     aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                     className="sm:hidden"
                 />
-                <Icon/>
+                {
+                    isMenuOpen ?  <ThemeToggle/> : <Icon/>
+                }
 
                 <NavbarContent className="hidden text-black sm:flex gap-4" justify="start">
                     <NavbarItem className={"dark:text-white font-bold"}>
