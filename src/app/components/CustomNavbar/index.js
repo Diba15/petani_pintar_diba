@@ -11,26 +11,51 @@ const CustomNavbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const menuItems = [
-        "Beranda",
-        "Layanan",
-        "Harga",
-        "Blog",
-        "Kontak",
+        {
+            name: "Beranda",
+            link: "/",
+        },
+        {
+            name: "Layanan",
+            link: "#Layanan",
+        },
+        {
+            name: "Testimoni",
+            link: "#Testimoni",
+        },
+        {
+            name: "Harga",
+            link: "#Harga",
+        },
+        {
+            name: "Blog",
+            link: "#Blog",
+        },
+        {
+            name: "Kontak",
+            link: "#Kontak",
+        },
     ];
 
     return (
-        <Navbar shouldHideOnScroll maxWidth={"full"} onMenuOpenChange={setIsMenuOpen} className={classNames(styles.nav, "dark:bg-medium dark:text-white")}>
+        <Navbar maxWidth={"full"} onMenuOpenChange={setIsMenuOpen}
+                className={classNames(styles.nav, "dark:bg-medium dark:text-white")}>
             <NavbarContent justify="start">
                 <NavbarMenuToggle
                     aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                     className="sm:hidden"
                 />
-                <Icon />
+                <Icon/>
 
                 <NavbarContent className="hidden text-black sm:flex gap-4" justify="start">
                     <NavbarItem className={"dark:text-white font-bold"}>
                         <Link href="#Layanan" aria-current="page">
                             Layanan
+                        </Link>
+                    </NavbarItem>
+                    <NavbarItem className={"dark:text-white font-bold"}>
+                        <Link href="#Testimoni" aria-current="page">
+                            Testimoni
                         </Link>
                     </NavbarItem>
                     <NavbarItem className={"dark:text-white font-bold"}>
@@ -52,7 +77,7 @@ const CustomNavbar = () => {
 
             </NavbarContent>
 
-            <NavbarContent justify="end">
+            <NavbarContent className={"hidden md:flex"} justify="end">
                 <NavbarItem>
                     <div>
                         <ThemeToggle/>
@@ -61,16 +86,16 @@ const CustomNavbar = () => {
             </NavbarContent>
             <NavbarMenu>
                 {menuItems.map((item, index) => (
-                    <NavbarMenuItem key={`${item}-${index}`} className={"text-black"}>
+                    <NavbarMenuItem key={`${item.name}-${index}`} className={"text-black"}>
                         <Link
                             color={
                                 index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
                             }
                             className="w-full"
-                            href="#"
+                            href={item.link}
                             size="lg"
                         >
-                            {item}
+                            {item.name}
                         </Link>
                     </NavbarMenuItem>
                 ))}
