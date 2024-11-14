@@ -41,8 +41,6 @@ export default function Home() {
                     <BlogCard />
                 </div>
             </div>
-            <Divider />
-            <Footer />
         </Layout>
     );
 }

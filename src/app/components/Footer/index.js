@@ -26,7 +26,7 @@ const Footer = () => {
                                 </Typography>
                             </ListItem>
                             <ListItem>
-                                <Link href="#" aria-current="page" className={"dark:text-white"}>
+                                <Link href="/" aria-current="page" className={"dark:text-white"}>
                                     Beranda
                                 </Link>
                             </ListItem>
@@ -114,7 +114,7 @@ const Footer = () => {
                                 </Link>
                             </ListItem>
                             <ListItem>
-                                <Link href="" aria-current="page" className={"dark:text-white"}>
+                                <Link href="/Kontak" aria-current="page" className={"dark:text-white"}>
                                     Hubungi Kami
                                 </Link>
                             </ListItem>

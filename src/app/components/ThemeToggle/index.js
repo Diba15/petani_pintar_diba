@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import {FaMoon} from "react-icons/fa";
 import {BsSunFill} from "react-icons/bs";
 
-const ThemeToggle = () => {
+const ThemeToggle = ({id}) => {
     const [darkMode, setDarkMode] = useState(false);
 
     useEffect(() => {
@@ -23,6 +23,7 @@ const ThemeToggle = () => {
 
     return (
         <div
+            id={id}
             className="relative w-16 h-8 flex items-center dark:bg-gray-900 bg-teal-500 cursor-pointer rounded-full p-1"
             onClick={() => setDarkMode(!darkMode)}>
             <FaMoon className="text-white" size={18}/>

@@ -1,7 +1,7 @@
 "use client"
 import styles from './Navbar.module.css';
 import classNames from "classnames";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import ThemeToggle from "@/app/components/ThemeToggle";
 import Icon from "@/app/components/Icon";
 import {
@@ -16,12 +16,15 @@ import {
 } from "@nextui-org/react";
 import Link from "next/link";
 import {RiCustomerService2Line} from "react-icons/ri";
-import {IoSettingsOutline} from "react-icons/io5";
 import {IoChevronDownOutline} from "react-icons/io5";
+import {MdNightsStay} from "react-icons/md";
+import {IoIosSunny} from "react-icons/io";
 
 
 const CustomNavbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isDark, setIsDark] = useState(false);
+    const [isActive, setIsActive] = useState('');
 
     const menuItems = [
         {
@@ -50,8 +53,34 @@ const CustomNavbar = () => {
         },
     ];
 
+    const handleDark = () => {
+        setIsDark(!isDark);
+        document.getElementById("darkMode").click()
+    }
+
+    useEffect(() => {
+        const handleActive = () => {
+            const sections = document.querySelectorAll('div')
+            let currentSection = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.scrollY >= sectionTop - 50) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            setIsActive(currentSection);
+        }
+
+        window.addEventListener('scroll', handleActive);
+        return () => {
+            window.removeEventListener('scroll', handleActive);
+        };
+    }, [isActive]);
+
     return (
-        <Navbar maxWidth={"full"} onMenuOpenChange={setIsMenuOpen}
+        <Navbar maxWidth={"full"} onMenuOpenChange={setIsMenuOpen} id={"nav"}
                 className={classNames(styles.nav, "dark:bg-medium dark:text-white")}>
             <NavbarContent justify="start">
                 <NavbarMenuToggle
@@ -59,26 +88,32 @@ const CustomNavbar = () => {
                     className="sm:hidden"
                 />
                 {
-                    isMenuOpen ? <ThemeToggle/> : <Icon/>
+                    isMenuOpen ? <ThemeToggle id={"darkMode"}/> : <Icon/>
                 }
 
-                <NavbarContent className="hidden text-black sm:flex gap-4" justify="start">
-                    <NavbarItem className={"dark:text-white font-bold"}>
+                <NavbarContent
+                    className={classNames("hidden text-black sm:flex gap-4")}
+                    justify="start">
+                    <NavbarItem
+                        className={classNames("dark:text-white font-bold", isActive === "Layanan" ? "text-green-700" : "")}>
                         <Link href="#Layanan" aria-current="page">
                             Layanan
                         </Link>
                     </NavbarItem>
-                    <NavbarItem className={"dark:text-white font-bold"}>
+                    <NavbarItem
+                        className={classNames("dark:text-white font-bold", isActive === "Testimoni" ? "text-green-700" : "")}>
                         <Link href="#Testimoni" aria-current="page">
                             Testimoni
                         </Link>
                     </NavbarItem>
-                    <NavbarItem className={"dark:text-white font-bold"}>
+                    <NavbarItem
+                        className={classNames("dark:text-white font-bold", isActive === "Harga" ? "text-green-700" : "")}>
                         <Link href="#Harga">
                             Harga
                         </Link>
                     </NavbarItem>
-                    <NavbarItem className={"dark:text-white font-bold"}>
+                    <NavbarItem
+                        className={classNames("dark:text-white font-bold", isActive === "Blog" ? "text-green-700" : "")}>
                         <Link href="#Blog">
                             Blog
                         </Link>
@@ -108,14 +143,25 @@ const CustomNavbar = () => {
                         }}
                     >
                         <DropdownItem key={"Kontak"}
+                                      href={"/Kontak"}
                                       description={"Jika ada yang ingin ditanyakan ataupun berkonsultasi silahkan hubungi kami."}
-                                      startContent={<RiCustomerService2Line className={"text-2xl"}/>}>
-                            Kontak
+                                      startContent={<RiCustomerService2Line className={"text-3xl"}/>}>
+                            <Link href={"/Kontak"}>
+                                Kontak
+                            </Link>
                         </DropdownItem>
                         <DropdownItem key={"DarkMode"}
-                                      description={"Ubah tampilan website menjadi gelap menyesuaikan dengan mata anda."}
-                                      startContent={<ThemeToggle/>}>
-                            Dark Mode
+                                      onClick={handleDark}
+                                      description={isDark ?
+                                          "Ubah tampilan website menjadi terang menyesuaikan dengan mata anda." :
+                                          "Ubah tampilan website menjadi gelap menyesuaikan dengan mata anda."}
+                                      startContent={isDark ?
+                                          <IoIosSunny className={"text-3xl"}/> :
+                                          <MdNightsStay className={"text-3xl"}/>}>
+                            <div className={"hidden"}><ThemeToggle id={"darkMode"}/></div>
+                            {
+                                isDark ? "Light Mode" : "Dark Mode"
+                            }
                         </DropdownItem>
                     </DropdownMenu>
                 </Dropdown>
