@@ -28,7 +28,11 @@ const SelectCategory = () => {
             defaultSelectedKeys={["umum"]}
         >
             {
-                categorys.map((category) => <SelectItem key={category.key}>{category.label}</SelectItem>)
+                categorys.map((category) => {
+                    return (
+                        <SelectItem className={"dark:text-white"} key={category.key}>{category.label}</SelectItem>
+                    )
+                })
             }
         </Select>
     )

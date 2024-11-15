@@ -53,10 +53,23 @@ const CustomNavbar = () => {
         },
     ];
 
+    const darkToggle = [
+        {
+            icon: isDark ? <MdNightsStay className={"text-3xl"}/> : <IoIosSunny className={"text-3xl"}/>,
+            title: isDark ? "Dark Mode" : "Light Mode",
+            desc: isDark ? "Ubah tampilan website menjadi gelap menyesuaikan dengan mata anda." : "Ubah tampilan website menjadi terang menyesuaikan dengan mata anda."
+        }
+    ]
+
     const handleDark = () => {
         setIsDark(!isDark);
         document.getElementById("darkMode").click()
     }
+
+    useEffect(() => {
+        const theme = localStorage.getItem("theme");
+        if (theme === "dark") setIsDark(true);
+    }, []);
 
     useEffect(() => {
         const handleActive = () => {
@@ -152,36 +165,36 @@ const CustomNavbar = () => {
                         </DropdownItem>
                         <DropdownItem key={"DarkMode"}
                                       onClick={handleDark}
-                                      description={isDark ?
-                                          "Ubah tampilan website menjadi terang menyesuaikan dengan mata anda." :
-                                          "Ubah tampilan website menjadi gelap menyesuaikan dengan mata anda."}
-                                      startContent={isDark ?
-                                          <IoIosSunny className={"text-3xl"}/> :
-                                          <MdNightsStay className={"text-3xl"}/>}>
-                            <div className={"hidden"}><ThemeToggle id={"darkMode"}/></div>
+                                      description={darkToggle[0].desc}
+                                      startContent={darkToggle[0].icon}>
                             {
-                                isDark ? "Light Mode" : "Dark Mode"
+                                darkToggle[0].title
                             }
                         </DropdownItem>
                     </DropdownMenu>
                 </Dropdown>
             </NavbarContent>
             <NavbarMenu>
-                {menuItems.map((item, index) => (
-                    <NavbarMenuItem key={`${item.name}-${index}`} className={"text-slate-950 font-bold"}>
-                        <Link
-                            color={
-                                index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
-                            }
-                            className="w-full"
-                            href={item.link}
-                            size="lg"
-                        >
-                            {item.name}
-                        </Link>
-                    </NavbarMenuItem>
-                ))}
+                <>
+                    {
+                        menuItems.map((item, index) => (
+                            <NavbarMenuItem key={`${item.name}-${index}`} className={"text-slate-950 font-bold"}>
+                                <Link
+                                    color={
+                                        index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
+                                    }
+                                    className="w-full"
+                                    href={item.link}
+                                    size="lg"
+                                >
+                                    {item.name}
+                                </Link>
+                            </NavbarMenuItem>
+                        ))
+                    }
+                </>
             </NavbarMenu>
+            <div className={"hidden"}><ThemeToggle id={"darkMode"}/></div>
         </Navbar>
 
     )

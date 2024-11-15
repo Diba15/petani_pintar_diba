@@ -43,7 +43,7 @@ const BlogCard = () => {
     ]
 
     return (
-        <div className={"flex flex-col flex-wrap mx-5 my-5 justify-center lg:flex-row"}>
+        <div className={"flex flex-col flex-wrap mx-5 py-5 justify-center lg:flex-row"}>
             <div className={"flex flex-col"}>
                 {blogs.map((blog, index) => (
                     index <= 1 && (

@@ -5,10 +5,8 @@ import styles from "@/app/components/Hero/Hero.module.css";
 import CardService from "@/app/components/CardService";
 import Testimoni from "@/app/components/Testimoni";
 import SwitchHarga from "@/app/components/SwitchHarga";
-import Footer from "@/app/components/Footer";
 import BlogHighlight from "@/app/components/BlogHighlight";
 import BlogCard from "@/app/components/BlogCard";
-import {Divider} from "@nextui-org/react";
 
 export default function Home() {
 
@@ -32,12 +30,12 @@ export default function Home() {
                 <SwitchHarga/>
             </div>
 
-            <div id={"Blog"} className={classNames("text-center mb-8")}>
+            <div id={"Blog"} className={classNames("text-center")}>
                 <h2 className={classNames(styles.fontSection, "font-bold text-5xl font-playfair dark:text-white")}>Blog</h2>
                 <div className={"my-10 flex justify-center mx-auto"}>
                     <BlogHighlight />
                 </div>
-                <div className={"flex flex-col my-5 justify-center lg:flex-row"}>
+                <div className={"flex flex-col justify-center lg:flex-row"}>
                     <BlogCard />
                 </div>
             </div>
