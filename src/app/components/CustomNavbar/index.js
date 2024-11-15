@@ -53,23 +53,10 @@ const CustomNavbar = () => {
         },
     ];
 
-    const darkToggle = [
-        {
-            icon: isDark ? <MdNightsStay className={"text-3xl"}/> : <IoIosSunny className={"text-3xl"}/>,
-            title: isDark ? "Dark Mode" : "Light Mode",
-            desc: isDark ? "Ubah tampilan website menjadi gelap menyesuaikan dengan mata anda." : "Ubah tampilan website menjadi terang menyesuaikan dengan mata anda."
-        }
-    ]
-
     const handleDark = () => {
         setIsDark(!isDark);
         document.getElementById("darkMode").click()
     }
-
-    useEffect(() => {
-        const theme = localStorage.getItem("theme");
-        if (theme === "dark") setIsDark(true);
-    }, []);
 
     useEffect(() => {
         const handleActive = () => {
@@ -163,13 +150,17 @@ const CustomNavbar = () => {
                                 Kontak
                             </Link>
                         </DropdownItem>
-                        <DropdownItem key={"DarkMode"}
+                        <DropdownItem className={"hidden dark:flex"} key={"DarkMode"}
                                       onClick={handleDark}
-                                      description={darkToggle[0].desc}
-                                      startContent={darkToggle[0].icon}>
-                            {
-                                darkToggle[0].title
-                            }
+                                      description={"Ubah tampilan website menjadi terang menyesuaikan dengan mata anda."}
+                                      startContent={<IoIosSunny className={"text-3xl"}/>}>
+                            Light Mode
+                        </DropdownItem>
+                        <DropdownItem className={"flex dark:hidden"} key={"DarkMode"}
+                                      onClick={handleDark}
+                                      description={"Ubah tampilan website menjadi gelap menyesuaikan dengan mata anda."}
+                                      startContent={<MdNightsStay className={"text-3xl"}/>}>
+                            Dark Mode
                         </DropdownItem>
                     </DropdownMenu>
                 </Dropdown>
