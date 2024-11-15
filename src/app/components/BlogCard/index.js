@@ -4,17 +4,20 @@ import blog3 from "../../images/blog3.png";
 import blog4 from "../../images/blog4.png";
 import Image from "next/image";
 import {Divider} from "@nextui-org/react";
+import classNames from "classnames";
+import styles from "./BlogCard.module.css";
 
 const Card = ({img, title}) => {
     return (
-        <div className="max-w-sm mx-auto rounded-xl mb-5 overflow-hidden items-center justify-center md:max-w-xl md:mx-10">
+        <div
+            className="max-w-sm mx-auto rounded-xl mb-5 overflow-hidden items-center justify-center md:max-w-xl md:mx-10">
             <div className="md:flex">
                 <div className="md:shrink-0">
                     <Image className="h-48 w-full object-cover md:h-full md:w-60" src={img} alt={"Blog1"}/>
                 </div>
                 <div className="p-8">
                     <a href=""
-                       className="block text-start mt-1 text-lg leading-tight font-medium text-black hover:underline dark:text-white">{title}</a>
+                       className={classNames(styles.playfair, "block text-start mt-1 text-lg leading-tight font-medium text-black hover:underline dark:text-white")}>{title}</a>
                 </div>
             </div>
         </div>
@@ -29,8 +32,8 @@ const BlogCard = () => {
             title: "Penggunaan Alat Pertanian Petani Pintar Membantu",
         },
         {
-          img: blog2,
-          title: "Sangat Membantu dalam Pengembangan Usaha Pertanian",
+            img: blog2,
+            title: "Sangat Membantu dalam Pengembangan Usaha Pertanian",
         },
         {
             img: blog3,
