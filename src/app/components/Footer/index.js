@@ -20,7 +20,7 @@ const Footer = () => {
                                 <Typography
                                     id="decorated-list-demo"
                                     level="body-xs"
-                                    sx={{textTransform: 'uppercase', fontWeight: 'lg', mb: 1}}
+                                    sx={{textTransform: 'uppercase', fontWeight: 'xl', mb: 1}}
                                 >
                                     Halaman Utama
                                 </Typography>
@@ -59,7 +59,7 @@ const Footer = () => {
                                 <Typography
                                     id="decorated-list-demo"
                                     level="body-xs"
-                                    sx={{ textTransform: 'uppercase', fontWeight: 'lg', mb: 1 }}
+                                    sx={{ textTransform: 'uppercase', fontWeight: 'xl', mb: 1 }}
                                 >
                                     Eksplor
                                 </Typography>
@@ -93,7 +93,7 @@ const Footer = () => {
                                 <Typography
                                     id="decorated-list-demo"
                                     level="body-xs"
-                                    sx={{ textTransform: 'uppercase', fontWeight: 'lg', mb: 1 }}
+                                    sx={{ textTransform: 'uppercase', fontWeight: 'xl', mb: 1 }}
                                 >
                                     Perusahaan
                                 </Typography>
@@ -132,7 +132,7 @@ const Footer = () => {
                                 <Typography
                                     id="decorated-list-demo"
                                     level="body-xs"
-                                    sx={{ textTransform: 'uppercase', fontWeight: 'lg', mb: 1 }}
+                                    sx={{ textTransform: 'uppercase', fontWeight: 'xl', mb: 1 }}
                                 >
                                     Hubungi Kami Melalui
                                 </Typography>
