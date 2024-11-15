@@ -43,7 +43,7 @@ const BlogCard = () => {
     ]
 
     return (
-        <div className={"flex flex-col flex-wrap mx-5 py-5 justify-center lg:flex-row"}>
+        <div className={"flex flex-col flex-wrap mx-5 py-5 justify-center md:flex-row"}>
             <div className={"flex flex-col"}>
                 {blogs.map((blog, index) => (
                     index <= 1 && (
@@ -51,7 +51,7 @@ const BlogCard = () => {
                     )
                 ))}
             </div>
-            <Divider className={"hidden lg:block"} orientation="vertical"/>
+            <Divider className={"hidden 2xl:block"} orientation="vertical"/>
             <div className={"flex flex-col"}>
                 {blogs.map((blog, index) => (
                     index > 1 && index <= 3 && (
