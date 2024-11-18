@@ -1,10 +1,7 @@
 "use client"
 import {Select, SelectItem} from "@nextui-org/react";
-import {useState} from "react";
 
-const SelectCategory = () => {
-    const [value, setValue] = useState(new Set([]))
-
+const SelectCategory = ({value, setValue}) => {
     const categorys = [
         {
             key: 'umum',
